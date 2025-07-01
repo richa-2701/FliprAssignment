@@ -1,22 +1,125 @@
-body{
-    font-family: "Roboto",sans-serif;
+body {
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(120deg, #f8fbff 60%, #eaf6ff 100%);
+    margin: 0;
+    min-height: 100vh;
+    transition: background 0.5s;
 }
+
 .ant-layout-sider {
     flex: 0 0 250px !important;
     max-width: 250px !important;
     min-width: 250px !important;
     width: 250px !important;
+    background: linear-gradient(135deg, #4f8cff 0%, #38c6ff 100%);
+    color: #fff;
+    box-shadow: 2px 0 16px rgba(56, 198, 255, 0.08);
+    transition: background 0.5s, box-shadow 0.3s;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    animation: fadeInLeft 0.7s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
 .ant-layout-sider-collapsed {
     flex: 0 0 80px !important;
     max-width: 80px !important;
     min-width: 80px !important;
     width: 80px !important;
+    background: linear-gradient(135deg, #4f8cff 0%, #38c6ff 100%);
+    color: #fff;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    animation: fadeInLeft 0.7s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.ant-layout{
+
+/* Modernize Ant Design Content Area */
+.ant-layout-content {
+    background: #fff;
+    border-radius: 24px;
+    margin: 24px;
+    padding: 32px 24px;
+    box-shadow: 0 4px 24px rgba(79, 140, 255, 0.10);
+    min-height: 80vh;
+    animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: box-shadow 0.3s, background 0.3s;
+}
+
+/* Add hover effect for cards or content blocks */
+.modern-card, .ant-card {
+    border-radius: 18px !important;
+    box-shadow: 0 4px 24px rgba(79, 140, 255, 0.12) !important;
+    transition: box-shadow 0.3s, transform 0.2s;
+    animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.modern-card:hover, .ant-card:hover {
+    box-shadow: 0 8px 32px rgba(56, 198, 255, 0.18) !important;
+    transform: translateY(-6px) scale(1.03);
+}
+
+/* Animate menu items on hover */
+.ant-menu-item, .ant-menu-submenu-title {
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+.ant-menu-item:hover, .ant-menu-submenu-title:hover {
+    background: #eaf6ff !important;
+    color: #38c6ff !important;
+    transform: scale(1.04);
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .ant-layout-content {
+    margin: 12px;
+    padding: 16px 6px;
+    min-height: 60vh;
+  }
+  .ant-layout-sider {
+    border-radius: 0 0 24px 24px;
+  }
+}
+
+.ant-layout {
     min-height: 97vh;
+    background: transparent;
+    transition: background 0.5s;
 }
 
 .ant-menu-title-content {
     font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #222;
+    transition: color 0.3s;
+    animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.ant-menu-item-selected .ant-menu-title-content {
+    color: #38c6ff !important;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(56, 198, 255, 0.10);
+    padding: 4px 12px;
+    transition: background 0.3s, color 0.3s;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

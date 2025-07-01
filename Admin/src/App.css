@@ -1,19 +1,45 @@
-/* ViewProjects.css */
+/* Modern Card Styles with Animation */
 .card-style {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-}
-
-.delete-btn {
-    transition: color 0.2s ease, background-color 0.2s ease;
-}
-
-.delete-btn:hover {
-    background-color: red;
-    color: white;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(79, 140, 255, 0.12);
+    transition: box-shadow 0.3s, transform 0.3s;
+    background: #fff;
+    overflow: hidden;
+    animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .card-hover:hover {
-    transform: scale(1.05);
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 8px 32px rgba(56, 198, 255, 0.18);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.delete-btn {
+    transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+    border-radius: 24px;
+    padding: 8px 20px;
+    background: linear-gradient(90deg, #ff5858 0%, #ffb347 100%);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 2px 8px rgba(255, 88, 88, 0.10);
+    cursor: pointer;
+    outline: none;
+}
+
+.delete-btn:hover {
+    background: linear-gradient(90deg, #ff1e1e 0%, #ffb347 100%);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(255, 30, 30, 0.18);
+    transform: scale(1.07);
 }
